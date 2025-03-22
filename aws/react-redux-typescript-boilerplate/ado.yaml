@@ -1,0 +1,8 @@
+trigger:
+- master
+
+variables:
+- group: ENV
+
+jobs:
+- template: ado/build.yaml

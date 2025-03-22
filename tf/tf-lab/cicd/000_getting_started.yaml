@@ -1,0 +1,31 @@
+# build.yaml
+
+jobs:
+- job: getting_started
+  displayName: 000 Getting Started
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - task: TerraformInstaller@0
+    displayName: Install TF
+    inputs:
+      terraformVersion: 1.1.0
+  # - bash: |
+  #     pwd
+  #     mkdir .aws
+  #     cd .aws
+  #     touch credentials
+  #     echo "[banana]"
+  #     echo "aws_access_key_id=$(TF-SC-KEY)" > credentials
+  #     echo "aws_secret_access_key=$(TF-SC-SECRET)" >> credentials
+  #     cat credentials
+  #     cd ..
+  #     ls -al
+  #     pwd
+  #   displayName: Set Creds
+  - bash: |
+      cd 000_getting_started
+      terraform init -backend-config="bucket=$(TF-STATE-BUCKET)" -backend-config="access_key=$(TF-SC-KEY)" -backend-config="secret_key=$(TF-SC-SECRET)"
+      terraform plan -input=false -out=plan -var "aws_access_key=$(TF-SC-KEY)" -var "aws_secret_key=$(TF-SC-SECRET)"
+      terraform apply -auto-approve -input=false
+    displayName: TF Init Plan Apply

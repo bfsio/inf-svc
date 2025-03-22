@@ -1,0 +1,10 @@
+# ado.yaml
+
+trigger:
+- master
+
+variables:
+- group: ENV
+
+jobs:
+- template: ado/000_getting_started.yaml
