@@ -1,5 +1,7 @@
 # (IaaS) - Research Project
 
+This project is somewhat of a pet project that is researching the feasibility of building my own IaaS platform. These are collections of libraries as the various environments have been encourntered professionally and this is a collection of those notes.
+
 ## Overview
 
 ### Prepping your environment to run this project
