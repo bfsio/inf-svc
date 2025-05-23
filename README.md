@@ -1,4 +1,4 @@
-# Infra Services Research Project
+# Infra as a Service - Research Project
 
 ## Overview
 
