@@ -1,4 +1,4 @@
-# Infra as a Service - Research Project
+# (IaaS) - Research Project
 
 ## Overview
 
